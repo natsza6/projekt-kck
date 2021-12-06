@@ -10,6 +10,17 @@ window.title("Alfabet")
 window.geometry('1000x700')
 window.config(bg = '#FFFFFF')
 
+def b1_akcja():
+    new_window=tk.Tk()
+    new_window.title("Alfabet")
+    new_window.geometry('1000x700')
+    new_window.config(bg = '#FFFFFF')
+    window.destroy()
+    new_window.mainloop()
+
+def b2_akcja():
+    window.destroy()
+
 myFont1 = font.Font(family='Helvetica', size=50, weight='bold')
 myFont2 = font.Font(family='Helvetica', size=30, weight='normal')
 
@@ -19,8 +30,8 @@ instrukcja = tk.Label(window, text = "Przed Tobą znajdzię się cały polski al
 tytul['font'] = myFont1
 instrukcja['font'] = myFont2
 
-b1 = Button(window, text = "Rozpocznij")
-b2 = Button(window, text = "Wyjdź")
+b1 = Button(window, text = "Rozpocznij", command = b1_akcja)
+b2 = Button(window, text = "Wyjdź", command = b2_akcja)
 
 b1['font'] = myFont2
 b2['font'] = myFont2
