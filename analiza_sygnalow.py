@@ -10,13 +10,14 @@ window.title("Alfabet")
 window.geometry('1000x700')
 window.config(bg = '#FFFFFF')
 
+def widget_destroy(widget):
+    widget.destroy()
+
 def b1_akcja():
-    new_window=tk.Tk()
-    new_window.title("Alfabet")
-    new_window.geometry('1000x700')
-    new_window.config(bg = '#FFFFFF')
-    window.destroy()
-    new_window.mainloop()
+    widget_destroy(tytul)
+    widget_destroy(instrukcja)
+    widget_destroy(b1)
+    widget_destroy(b2)
 
 def b2_akcja():
     window.destroy()
