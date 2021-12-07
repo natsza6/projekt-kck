@@ -14,10 +14,39 @@ def widget_destroy(widget):
     widget.destroy()
 
 def b1_akcja():
-    widget_destroy(tytul)
+        widget_destroy(tytul)
     widget_destroy(instrukcja)
     widget_destroy(b1)
     widget_destroy(b2)
+
+    # wszystkie funkcje
+    def make_widget(widget):
+        widget.pack()
+    def destroy_wiget(widget):
+        widget.destroy()
+
+    def odliczanie_label(label):
+        global counter
+        counter = 4
+        def count():
+            global counter
+            counter -= 1
+            if counter <= 0:
+                counter = ""
+
+            label.config(text=str(counter))
+            label.after(1000,count)
+        count()
+
+    tytul_odliczanie = tk.Label(window, text = "Do wyświetlenia pierwszej litery alfabetu pozostało:")
+    tytul_odliczanie['font'] = myFont2
+    tytul_odliczanie.pack()
+    window.after(3000, destroy_wiget,tytul_odliczanie)
+
+    odliczanie_liczby = tk.Label(window)
+    odliczanie_liczby['font'] = myFont3
+    odliczanie_liczby.pack()
+    odliczanie_label(odliczanie_liczby)
 
 def b2_akcja():
     window.destroy()
