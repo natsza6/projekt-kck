@@ -39,6 +39,15 @@ def b1_akcja():
             label.config(text=str(counter))
             label.after(1000,count)
         count()
+        
+    def letter():
+        alfabet = "AĄBCĆDEĘFGHIJKLŁMNŃOÓPRSŚTUWZŻŹ"
+        alfabet_label = tk.Label(window,width='700', height = '1000')
+        alfabet_label.pack()
+        for i in alfabet:
+            oneletter = i
+            alfabet_label.configure(text = oneletter, font = myFont3)
+            window.after(3000,letter)
 
     tytul_odliczanie = tk.Label(window, text = "Do wyświetlenia pierwszej litery alfabetu pozostało:")
     tytul_odliczanie['font'] = myFont2
@@ -49,6 +58,8 @@ def b1_akcja():
     odliczanie_liczby['font'] = myFont3
     odliczanie_liczby.pack()
     odliczanie_label(odliczanie_liczby)
+    
+    window.after(3000,letter)
 
 def b2_akcja():
     window.destroy()
