@@ -47,7 +47,7 @@ class mruganie(tk.Tk):
         try:
             oneletter = next(self.A)
             self.label.configure(text = oneletter, font = self.myFont3)
-            self.after(600,self.letter)
+            self.after(1000,self.letter)
         except StopIteration:
             self.A = self.alphabet()
             self.after(0,self.letter)
