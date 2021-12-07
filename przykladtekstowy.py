@@ -27,7 +27,6 @@ class mruganie(tk.Tk):
 
         if self.remaining <= 0:
             self.label.configure(text=" ")
-            time.sleep(1)
             self.letter()
         else:
             self.label.configure(text="%d" % self.remaining)
@@ -42,14 +41,6 @@ class mruganie(tk.Tk):
                     #self.label.configure(text = self.oneletter, font = self.myFont3)
                     #time.sleep(2)
                     #self.letter()
-
-
-
-
-
-
-
-
 
 if __name__ == "__main__":
     app = mruganie()
