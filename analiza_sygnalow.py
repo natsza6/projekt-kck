@@ -32,7 +32,9 @@ def b1_akcja():
             global counter
             counter -= 1
             if counter <= 0:
-                counter = ""
+                counter = 0
+                odliczanie_liczby.destroy()
+                return
 
             label.config(text=str(counter))
             label.after(1000,count)
